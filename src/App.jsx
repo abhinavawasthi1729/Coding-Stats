@@ -56,64 +56,91 @@ function App() {
   };
 
   // Creating browser router instance with defined routes
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/profile/:id",
-      element: <Profile />,
-    },
-    {
-      path: "/profile/changepassword",
-      element: <ChangePassword />,
-    },
-    {
-      path: "/profile/deleteaccount",
-      element: <DeleteAccount />,
-    },
-    {
-      path: "/user/:id",
-      element: <UserInfo />,
-    },
-    {
-      path: "/notifications",
-      element: <Notifications />,
-    },
-    {
-      path: "/settings",
-      element: <Settings />,
-    },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-    {
-      path: "/resetpassword",
-      element: <ResetPassword />,
-    },
-    {
-      path: "/resetpassword/:id",
-      element: <ResetPasswordNew />,
-    },
-    {
-      path: "/setPlatforms",
-      element: <SetPlatforms />,
-    },
-    {
-      path: "/updatePlatforms",
-      element: <UpdatePlatforms />,
-    },
-    {
-      path: "/register",
-      element: <Register />,
-    },
-    {
-      path: "*",
-      element: <FourOFour />,
-    },
-  ]);
+ const router = createBrowserRouter([
+  // Home page route
+  {
+    path: "/",
+    element: <Home />,
+  },
+
+  // User profile page (dynamic user ID)
+  {
+    path: "/profile/:id",
+    element: <Profile />,
+  },
+
+  // Change password page (typically accessed from profile/settings)
+  {
+    path: "/profile/changepassword",
+    element: <ChangePassword />,
+  },
+
+  // Delete account confirmation or action page
+  {
+    path: "/profile/deleteaccount",
+    element: <DeleteAccount />,
+  },
+
+  // View another user's public info (dynamic user ID)
+  {
+    path: "/user/:id",
+    element: <UserInfo />,
+  },
+
+  // Notifications page (for alerts/messages)
+  {
+    path: "/notifications",
+    element: <Notifications />,
+  },
+
+  // App-wide settings page
+  {
+    path: "/settings",
+    element: <Settings />,
+  },
+
+  // Login page
+  {
+    path: "/login",
+    element: <Login />,
+  },
+
+  // Start of password reset process (enter email)
+  {
+    path: "/resetpassword",
+    element: <ResetPassword />,
+  },
+
+  // Reset password form for a specific user/token (dynamic ID)
+  {
+    path: "/resetpassword/:id",
+    element: <ResetPasswordNew />,
+  },
+
+  // Set platforms (initial onboarding or preferences)
+  {
+    path: "/setPlatforms",
+    element: <SetPlatforms />,
+  },
+
+  // Update platform preferences (already set)
+  {
+    path: "/updatePlatforms",
+    element: <UpdatePlatforms />,
+  },
+
+  // User registration page
+  {
+    path: "/register",
+    element: <Register />,
+  },
+
+  // Fallback route for undefined paths (404 page)
+  {
+    path: "*",
+    element: <FourOFour />,
+  },
+]);
 
   return (
     <>
