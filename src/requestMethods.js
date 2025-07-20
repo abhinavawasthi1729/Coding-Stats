@@ -1,10 +1,10 @@
-import axios from "axios";
-const BASE_URL = "https://coding-stats-server.onrender.com";
+// Import Vite's config helper
+import { defineConfig } from 'vite'
 
-export const publicRequest = axios.create({
-  baseURL: BASE_URL,
-});
+// Import the React plugin for Vite
+import react from '@vitejs/plugin-react'
 
-export const userRequest = axios.create({
-  baseURL: BASE_URL,
-});
+// Export Vite configuration
+export default defineConfig({
+  plugins: [react()], // Enable React support
+})
